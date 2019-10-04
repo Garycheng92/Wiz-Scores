@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {Fragment} from 'react'
+import Button from '../Button/Button';
 import PropTypes from 'prop-types'
 import './Table.css'
 
-const Table = ({list}) => {
+
+
+const Table = ({list, moreGames, page}) => {
   return (
+    <Fragment>
     <ul className='table'>
       {list.map(item => {
         return (
@@ -22,6 +26,14 @@ const Table = ({list}) => {
         )
       })}
     </ul>
+    <div>
+      <Button
+      onClick={() => moreGames(page + 1)}
+      >
+        More
+      </Button>
+    </div>
+    </Fragment>
   )
 }
 
